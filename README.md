@@ -14,7 +14,7 @@ This project consists on performing database analysis for climate data using SQL
 - [X] Link Python to the database by creating an SQLAlchemy session.
 
 ### Precipitation Analysis
-- [] Start by finding the most recent date in the data set.
+- [X] Start by finding the most recent date in the data set.
 - [] Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data.
 - [] Select only the date and prcp values.
 - [] Load the query results into a Pandas DataFrame and set the index to the date column.

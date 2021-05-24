@@ -11,3 +11,5 @@
     - Step 1 Preparation tasks
 - Finds last date
     - Queries the DB to find the last measurement date
+- Computes time delta
+    - Adds leap-year logic
