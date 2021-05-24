@@ -13,3 +13,5 @@
     - Queries the DB to find the last measurement date
 - Computes time delta
     - Adds leap-year logic
+- Computes precipitation analysis
+    - [ ] Graphic looks weird, needs debugging 
