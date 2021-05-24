@@ -7,10 +7,11 @@ This project consists on performing database analysis for climate data using SQL
 ## *Application Breakdown*
 
 ## *Task List*
-### Step 1 - Climate Analysis and Exploration
-- [] Use SQLAlchemy create_engine to connect to your sqlite database.
-- [] Use SQLAlchemy automap_base() to reflect your tables into classes and save a reference to those classes called Station and Measurement.
-- [] Link Python to the database by creating an SQLAlchemy session.
+## Step 1 - Climate Analysis and Exploration
+### Preparation
+- [X] Use SQLAlchemy create_engine to connect to your sqlite database.
+- [X] Use SQLAlchemy automap_base() to reflect your tables into classes and save a reference to those classes called Station and Measurement.
+- [X] Link Python to the database by creating an SQLAlchemy session.
 
 ### Precipitation Analysis
 - [] Start by finding the most recent date in the data set.
@@ -32,7 +33,7 @@ This project consists on performing database analysis for climate data using SQL
 - [] Query the last 12 months of temperature observation data for this station.
 - [] Plot the results as a histogram with bins=12.
 
-### Step 2 - Climate App
+## Step 2 - Climate App
 - [] Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 - [] Use Flask to create your routes.
 - [] Routes
@@ -52,7 +53,7 @@ This project consists on performing database analysis for climate data using SQL
         - When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
         - When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
 
-### Temperature Analysis I
+## Temperature Analysis I
 - [] Hawaii is reputed to enjoy mild weather all year. Is there a meaningful difference between the temperature in, for example, June and December?
 - [] Convert the date column format from string to datetime.
 - [] Set the date column as the DataFrame index
@@ -60,7 +61,7 @@ This project consists on performing database analysis for climate data using SQL
 - [] Identify the average temperature in June at all stations across all available years in the dataset. Do the same for December temperature.
 - [] Use the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
 
-### Temperature Analysis II
+## Temperature Analysis II
 - [] You are looking to take a trip from August first to August seventh of this year, but are worried that the weather will be less than ideal. Using historical data in the dataset find out what the temperature has previously looked like.
 - [] The starter notebook contains a function called calc_temps that will accept a start date and end date in the format %Y-%m-%d. The function will return the minimum, average, and maximum temperatures for that range of dates.
 - [] Use the calc_temps function to calculate the min, avg, and max temperatures for your trip using the matching dates from a previous year (i.e., use "2017-08-01").
