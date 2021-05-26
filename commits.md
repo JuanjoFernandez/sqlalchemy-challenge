@@ -14,4 +14,8 @@
 - Computes time delta
     - Adds leap-year logic
 - Computes precipitation analysis
-    - [ ] Graphic looks weird, needs debugging 
+    - [X] Graphic looks weird, needs debugging
+
+### *05/26/2021
+- Fixes precipitation graph
+    - Changes the graph style to a pandas plot
