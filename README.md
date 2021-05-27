@@ -23,10 +23,10 @@ This project consists on performing database analysis for climate data using SQL
 - [X] Use Pandas to print the summary statistics for the precipitation data.
 
 ### Station Analysis
-- [] Design a query to calculate the total number of stations in the dataset.
-- [] Design a query to find the most active stations (i.e. which stations have the most rows?).
-- [] List the stations and observation counts in descending order.
-- [] Which station id has the highest number of observations?
+- [X] Design a query to calculate the total number of stations in the dataset.
+- [X] Design a query to find the most active stations (i.e. which stations have the most rows?).
+- [X] List the stations and observation counts in descending order.
+- [X] Which station id has the highest number of observations?
 - [] Using the most active station id, calculate the lowest, highest, and average temperature.
 - [] Design a query to retrieve the last 12 months of temperature observation data (TOBS).
 - [] Filter by the station with the highest number of observations.
