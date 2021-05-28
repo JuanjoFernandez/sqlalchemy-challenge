@@ -19,3 +19,6 @@
 ### *05/26/2021
 - Fixes precipitation graph
     - Changes the graph style to a pandas plot
+
+### *05/27/2021
+- Adds station queries
