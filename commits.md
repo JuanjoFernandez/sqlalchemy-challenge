@@ -22,3 +22,7 @@
 
 ### *05/27/2021
 - Adds station queries
+
+### *05/28/2021
+- Adds query to find most active station
+- Adds station histogram

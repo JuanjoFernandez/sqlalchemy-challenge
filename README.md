@@ -28,10 +28,10 @@ This project consists on performing database analysis for climate data using SQL
 - [X] List the stations and observation counts in descending order.
 - [X] Which station id has the highest number of observations?
 - [X] Using the most active station id, calculate the lowest, highest, and average temperature.
-- [] Design a query to retrieve the last 12 months of temperature observation data (TOBS).
-- [] Filter by the station with the highest number of observations.
-- [] Query the last 12 months of temperature observation data for this station.
-- [] Plot the results as a histogram with bins=12.
+- [X] Design a query to retrieve the last 12 months of temperature observation data (TOBS).
+- [X] Filter by the station with the highest number of observations.
+- [X] Query the last 12 months of temperature observation data for this station.
+- [X] Plot the results as a histogram with bins=12.
 
 ## Step 2 - Climate App
 - [] Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
