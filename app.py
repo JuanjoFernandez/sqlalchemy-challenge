@@ -48,10 +48,14 @@ def stations():
     stations = session.query(Station.station,Station.name,Station.latitude,Station.longitude,Station.elevation)
     session.close()
 
-    # Building the list
-    sta_list = []
+    # Initializing dictionary
+    sta_list = {}
+
+    # Retrieving query results and saving them to the dictionary
+    row = 0
     for _ in stations:
-        sta_list.append(_)
+        sta_list[stations[row][0]] = {'Name':stations[row][1], 'Latitude':stations[row][2], 'Longitude':stations[row][3], 'Elevation': stations[row][4]}
+        row += 1
 
     # List of stations
     return jsonify(sta_list)
@@ -101,10 +105,14 @@ def tobs():
     .limit(days)
     session.close()
 
-    # Building the list
-    station_temp = []
+    # Building the dictionary
+    temp_measures = {}
+    row = 0
     for _ in hist_data:
-        station_temp.append(_)
+        temp_measures[hist_data[row][1]] = {'Date': hist_data[row][1], 'Temperature': hist_data[row][2]}
+        row += 1
+
+    station_temp = {first_station:temp_measures}
 
     # List of stations
     return jsonify(station_temp)
@@ -120,10 +128,15 @@ def date_start(start):
         .filter(Measurement.date >= start)
     session.close()
 
-    # Building the list
-    start_list = []
+    # Building the dictionary
+    row = 0
+    start_list = {}
     for _ in first:
-        start_list.append(_)
+        start_list[first[row][0]] = {'Date': first[row][0],
+                                    'MaxTemp': first[row][1], 
+                                    'MinTemp': first[row][2],
+                                    'AvgTemp': first[row][3]}
+        row += 1
 
     # List of temperatures stats
     return jsonify(start_list)
@@ -140,10 +153,15 @@ def date_start_end_query(start, end):
             .filter(Measurement.date >= start,
                     Measurement.date <= end)
 
-    # Building the list
-    start_list = []
+    # Building the dictionary
+    row = 0
+    start_list = {}
     for _ in first:
-        start_list.append(_)
+        start_list[first[row][0]] = {'Date': first[row][0],
+                                    'MaxTemp': first[row][1], 
+                                    'MinTemp': first[row][2],
+                                    'AvgTemp': first[row][3]}
+        row += 1
 
     # List of temperatures stats
     return jsonify(start_list)

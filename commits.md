@@ -32,3 +32,4 @@
 
 ### **05/29/2021**
 - Adds /\<start> and /\<start> /\<end> endpoints to API
+- Reformats all json to dictionaries and column names
