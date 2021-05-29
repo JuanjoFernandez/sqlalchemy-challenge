@@ -16,19 +16,19 @@
 - Computes precipitation analysis
     - [X] Graphic looks weird, needs debugging
 
-### *05/26/2021
+### **05/26/2021**
 - Fixes precipitation graph
     - Changes the graph style to a pandas plot
 
-### *05/27/2021
+### **05/27/2021**
 - Adds station queries
 
-### *05/28/2021
+### **05/28/2021**
 - Adds query to find most active station
 - Adds station histogram
 - Adds flask API general layout
 - Fixes bug on leap-year calculations
 - Adds /stations and /tobs to API
 
-### *05/29/2021
+### **05/29/2021**
 - Adds /\<start> and /\<start> /\<end> endpoints to API
