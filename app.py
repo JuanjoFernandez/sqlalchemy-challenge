@@ -39,8 +39,8 @@ def index():
     return (f"<h1>Welcome to the Hawaii Climate API, available routes:</h1></br>"
     f"/api/v1.0/stations <a href = /api/v1.0/stations>JSON station list</a></br>"
     f"/api/v1.0/tobs <a href = /api/v1.0/tobs>JSON temperatures from the most active station for the past 12 months</a></br>"
-    )
-    
+    f"/api/v1.0/&ltstart&gt &ltstart&gt is a date which you want to retrieve stats from, for example <a href = /api/v1.0/2017-05-23>2017-05-23</a></br>"
+    f"/api/v1.0/&ltstart&gt/&ltend>&gt start and end are the date range you want to retrieve stats from, for example <a href = /api/v1.0/2016-08-23/2017-08-23>From 2016-08-23 to 2017-08-23</a></br>")
 
 @app.route("/api/v1.0/stations")
 def stations():
@@ -101,7 +101,7 @@ def tobs():
     .limit(days)
     session.close()
 
-     # Building the list
+    # Building the list
     station_temp = []
     for _ in hist_data:
         station_temp.append(_)
@@ -110,15 +110,43 @@ def tobs():
     return jsonify(station_temp)
     
 @app.route("/api/v1.0/<start>")
-def tobs():
+def date_start(start):
+    # Building the query
+    first =session.query(Measurement.date,\
+        func.max(Measurement.tobs),\
+        func.min(Measurement.tobs),\
+        func.avg(Measurement.tobs))\
+        .group_by(Measurement.date)\
+        .filter(Measurement.date >= start)
+    session.close()
 
- @app.route("/api/v1.0/<start>/<end>")
-def tobs():
+    # Building the list
+    start_list = []
+    for _ in first:
+        start_list.append(_)
+
+    # List of temperatures stats
+    return jsonify(start_list)
  
- #    - /api/v1.0/<start> and /api/v1.0/<start>/<end>
-#         - Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
-#         - When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
-#         - When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
+@app.route("/api/v1.0/<start>/<end>")
+def date_start_end_query(start, end):
+
+    # Building the query
+    first =session.query(Measurement.date,\
+            func.max(Measurement.tobs),\
+            func.min(Measurement.tobs),\
+            func.avg(Measurement.tobs))\
+            .group_by(Measurement.date)\
+            .filter(Measurement.date >= start,
+                    Measurement.date <= end)
+
+    # Building the list
+    start_list = []
+    for _ in first:
+        start_list.append(_)
+
+    # List of temperatures stats
+    return jsonify(start_list)
 
 if __name__ == "__main__":
     app.run(debug=True)

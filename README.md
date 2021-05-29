@@ -36,7 +36,7 @@ This project consists on performing database analysis for climate data using SQL
 ## Step 2 - Climate App
 - [X] Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 - [X] Use Flask to create your routes.
-- [] Routes
+- [X] Routes
     - /
         - Home page.
         - List all routes that are available.

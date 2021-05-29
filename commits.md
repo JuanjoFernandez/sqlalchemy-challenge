@@ -29,3 +29,6 @@
 - Adds flask API general layout
 - Fixes bug on leap-year calculations
 - Adds /stations and /tobs to API
+
+### *05/29/2021
+- Adds /\<start> and /\<start> /\<end> endpoints to API
