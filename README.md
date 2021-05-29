@@ -5,6 +5,10 @@
 This project consists on performing database analysis for climate data using SQLAlchemy
 
 ## *Application Breakdown*
+- The application uses SQLAlchemy to perform a series of queries to a SQLlite database
+- After the queries it performs some Data Analysis, all queries and analysis are contained in the [climate_starter.ipynb](climate_starter.ipynb) jupyter notebook
+- [app.py](app.py) contains a Flask script that while running creates an API with several endpoints to obtain data from the database. All results are returned as json files
+
 
 ## *Task List*
 ## Step 1 - Climate Analysis and Exploration
@@ -54,12 +58,12 @@ This project consists on performing database analysis for climate data using SQL
         - When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
 
 ## Temperature Analysis I
-- [] Hawaii is reputed to enjoy mild weather all year. Is there a meaningful difference between the temperature in, for example, June and December?
-- [] Convert the date column format from string to datetime.
-- [] Set the date column as the DataFrame index
-- [] Drop the date column
-- [] Identify the average temperature in June at all stations across all available years in the dataset. Do the same for December temperature.
-- [] Use the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
+- [X] Hawaii is reputed to enjoy mild weather all year. Is there a meaningful difference between the temperature in, for example, June and December?
+- [X] Convert the date column format from string to datetime.
+- [X] Set the date column as the DataFrame index
+- [X] Drop the date column
+- [X] Identify the average temperature in June at all stations across all available years in the dataset. Do the same for December temperature.
+- [X] Use the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
 
 ## Temperature Analysis II
 - [] You are looking to take a trip from August first to August seventh of this year, but are worried that the weather will be less than ideal. Using historical data in the dataset find out what the temperature has previously looked like.

@@ -152,6 +152,7 @@ def date_start_end_query(start, end):
             .group_by(Measurement.date)\
             .filter(Measurement.date >= start,
                     Measurement.date <= end)
+    session.close()
 
     # Building the dictionary
     row = 0
@@ -167,5 +168,5 @@ def date_start_end_query(start, end):
     return jsonify(start_list)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
 
