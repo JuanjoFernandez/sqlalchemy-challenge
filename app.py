@@ -44,6 +44,7 @@ def index():
 def stations():
     # Creating the query
     stations = session.query(Station.station,Station.name,Station.latitude,Station.longitude,Station.elevation)
+    session.close()
 
     # Building the list
     sta_list = []
@@ -56,6 +57,7 @@ def stations():
 
 @app.route("/api/v1.0/tobs")
 def tobs():
+    # Determining number of days (leap-year logic)
     return ""
 #     - 
 #         - Query the dates and temperature observations of the most active station for the last year of data.

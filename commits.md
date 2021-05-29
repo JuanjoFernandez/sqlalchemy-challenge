@@ -26,3 +26,4 @@
 ### *05/28/2021
 - Adds query to find most active station
 - Adds station histogram
+- Adds flask API general layout
