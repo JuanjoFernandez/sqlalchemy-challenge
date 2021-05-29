@@ -27,3 +27,4 @@
 - Adds query to find most active station
 - Adds station histogram
 - Adds flask API general layout
+- Fixes bug on leap-year calculations

@@ -1,10 +1,12 @@
 # Libraries and dependencies
 import numpy as np
-
+import datetime as dt
 import sqlalchemy
+
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
+from sqlalchemy import asc, desc
 
 from flask import Flask, jsonify
 
@@ -58,12 +60,62 @@ def stations():
 @app.route("/api/v1.0/tobs")
 def tobs():
     # Determining number of days (leap-year logic)
-    return ""
-#     - 
-#         - Query the dates and temperature observations of the most active station for the last year of data.
-#         - Return a JSON list of temperature observations (TOBS) for the previous year.
+    
+    # Querying the DB
+    last_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
 
-#     - /api/v1.0/<start> and /api/v1.0/<start>/<end>
+    # Unpacking the result
+    last_date = [last_date[0] for _ in last_date]
+
+    # Converting date to string
+    last_date = str(last_date[0])
+
+    # Converting last_date to datetime object
+    last_date = dt.datetime.strptime(last_date, '%Y-%m-%d')
+    year = last_date.year
+    month = last_date.month
+
+    # Depending on the month of the measure I need to determine if leap-year calculations are done on the current or previous year
+    if month < 2:
+        year -=1
+
+    # Leap-year computing
+    leap = False
+    if last_date.year % 4 == 0 and \
+    (last_date.year % 100 != 0 or last_date.year % 400 == 0):
+        leap = True
+
+    days = 365
+    if leap == True:
+        days = 366
+
+    # Finding the most active station
+    active_sta = session.query(Measurement.station, func.count(Measurement.date).label('count'))\
+    .group_by(Measurement.station)\
+    .order_by(desc('count'))
+    first_station = active_sta[0][0]
+
+    # Building the query
+    hist_data = session.query(Measurement.station, Measurement.date, Measurement.tobs)\
+    .filter(Measurement.station ==  first_station)\
+    .limit(days)
+    session.close()
+
+     # Building the list
+    station_temp = []
+    for _ in hist_data:
+        station_temp.append(_)
+
+    # List of stations
+    return jsonify(station_temp)
+    
+@app.route("/api/v1.0/<start>")
+def tobs():
+
+ @app.route("/api/v1.0/<start>/<end>")
+def tobs():
+ 
+ #    - /api/v1.0/<start> and /api/v1.0/<start>/<end>
 #         - Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
 #         - When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
 #         - When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
