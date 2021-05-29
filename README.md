@@ -34,8 +34,8 @@ This project consists on performing database analysis for climate data using SQL
 - [X] Plot the results as a histogram with bins=12.
 
 ## Step 2 - Climate App
-- [] Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
-- [] Use Flask to create your routes.
+- [X] Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
+- [X] Use Flask to create your routes.
 - [] Routes
     - /
         - Home page.

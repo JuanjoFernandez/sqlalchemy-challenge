@@ -28,3 +28,4 @@
 - Adds station histogram
 - Adds flask API general layout
 - Fixes bug on leap-year calculations
+- Adds /stations and /tobs to API
