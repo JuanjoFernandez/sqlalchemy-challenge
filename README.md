@@ -1,16 +1,42 @@
-# sqlalchemy-challenge
+![header](Resources/header.jpg)
 
-## *Overview*
+# *Overview*
 
-This project consists on performing database analysis for climate data using SQLAlchemy
+This project consists on performing database analysis for climate data using SQLAlchemy. After performing a series of complex queries data analysis is performed on the results
 
-## *Application Breakdown*
+# *Application Breakdown*
 - The application uses SQLAlchemy to perform a series of queries to a SQLlite database
 - After the queries it performs some Data Analysis, all queries and analysis are contained in the [climate_starter.ipynb](climate_starter.ipynb) jupyter notebook
+![temp_frequency](Resources/temp_freq.jpg)
 - [app.py](app.py) contains a Flask script that while running creates an API with several endpoints to obtain data from the database. All results are returned as json files
+- [temp_analysis_bonus_1_starter.ipynb](temp_analysis_bonus_1_starter.ipynb) contains calculations focused on measurement stations
+- [temp_analysis_bonus_2_starter.ipynb](temp_analysis_bonus_2_starter.ipynb) contains normal temperature calculations for a given date range
+![normal_temp](Resources/normal_temp.jpg)
+
+# *Repository structure*
+````bash
+│   .gitignore
+│   app.py
+│   climate_starter.ipynb
+│   commits.md
+│   hawaii.sqlite
+│   LICENSE
+│   README.md
+│   temp_analysis_bonus_1_starter.ipynb
+│   temp_analysis_bonus_2_starter.ipynb
+│
+└───Resources
+        hawaii.sqlite
+        hawaii_measurements.csv
+        hawaii_stations.csv
+        header.jpg
+        normal_temp.jpg
+        temp_freq.jpg
+````
 
 
-## *Task List*
+
+# *Task List*
 ## Step 1 - Climate Analysis and Exploration
 ### Preparation
 - [X] Use SQLAlchemy create_engine to connect to your sqlite database.
