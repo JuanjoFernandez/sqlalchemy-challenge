@@ -66,18 +66,18 @@ This project consists on performing database analysis for climate data using SQL
 - [X] Use the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
 
 ## Temperature Analysis II
-- [] You are looking to take a trip from August first to August seventh of this year, but are worried that the weather will be less than ideal. Using historical data in the dataset find out what the temperature has previously looked like.
-- [] The starter notebook contains a function called calc_temps that will accept a start date and end date in the format %Y-%m-%d. The function will return the minimum, average, and maximum temperatures for that range of dates.
-- [] Use the calc_temps function to calculate the min, avg, and max temperatures for your trip using the matching dates from a previous year (i.e., use "2017-08-01").
-- [] Plot the min, avg, and max temperature from your previous query as a bar chart.
-- [] Use "Trip Avg Temp" as the title.
-- [] Use the average temperature as the bar height (y value).
-- [] Use the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
-- [] Daily Rainfall Average
+- You are looking to take a trip from August first to August seventh of this year, but are worried that the weather will be less than ideal. Using historical data in the dataset find out what the temperature has previously looked like.
+- The starter notebook contains a function called calc_temps that will accept a start date and end date in the format %Y-%m-%d. The function will return the minimum, average, and maximum temperatures for that range of dates.
+- [X] Use the calc_temps function to calculate the min, avg, and max temperatures for your trip using the matching dates from a previous year (i.e., use "2017-08-01").
+- [X] Plot the min, avg, and max temperature from your previous query as a bar chart.
+- [X] Use "Trip Avg Temp" as the title.
+- [X] Use the average temperature as the bar height (y value).
+- [X] Use the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
+- [X] Daily Rainfall Average
     - Now that you have an idea of the temperature lets check to see what the rainfall has been, you don't want a when it rains the whole time!
     - Calculate the rainfall per weather station using the previous year's matching dates.
     - Sort this in descending order by precipitation amount and list the station, name, latitude, longitude, and elevation.
-- [] Daily Temperature Normals
+- [X] Daily Temperature Normals
     - Calculate the daily normals for the duration of your trip. Normals are the averages for the min, avg, and max temperatures. You are provided with a function called daily_normals that will calculate the daily normals for a specific date. This date string will be in the format %m-%d. Be sure to use all historic TOBS that match that date string.
     - Set the start and end date of the trip.
     - Use the date to create a range of dates.

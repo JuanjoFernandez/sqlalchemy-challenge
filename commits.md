@@ -34,3 +34,4 @@
 - Adds /\<start> and /\<start> /\<end> endpoints to API
 - Reformats all json to dictionaries and column names
 - Adds temperature analysis t-test
+- Adds temperature normal analysis
