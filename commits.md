@@ -1,3 +1,7 @@
+![header](Resources/header.jpg)
+
+# Commit history
+
 ### **05/24/2021**
 - Initial commit
     - Creates and clones the repository
