@@ -35,3 +35,4 @@
 - Reformats all json to dictionaries and column names
 - Adds temperature analysis t-test
 - Adds temperature normal analysis
+- Formats README
